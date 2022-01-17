@@ -9,18 +9,18 @@ public class Main {
 
         //#1
         System.out.println("Задача №1");
-        int i = 1;
+
         String message = "";
 
-        while (i < 10)
-            message += i++ + " ";
+        for (int i = 1; i < 10; i++)
+            message += i + " ";
 
-        message += i + "\n";
+        message += "10\n";
 
-        while (i > 1)
-            message += i-- + " ";
+        for (int i = 10; i > 1; i--)
+            message += i + " ";
 
-        System.out.println(message + i);
+        System.out.println(message + "1");
 
         //#2
         System.out.println("\nЗадача №2");
@@ -34,14 +34,14 @@ public class Main {
         System.out.println("\nЗадача №3");
         int currentYear = 2022;
         int period = 79;
+        int firstSeenWithinLastTwoCenturiesYear = 0;
 
-        int firstSeenWithinLastTwoCenturiesYear = ((currentYear - 200) / period + 1) * period;
+        do
+            firstSeenWithinLastTwoCenturiesYear += period;
+        while ( firstSeenWithinLastTwoCenturiesYear <= (currentYear - 200) );
 
-        for (int j = firstSeenWithinLastTwoCenturiesYear; ; j += 79) {
+        for (int j = firstSeenWithinLastTwoCenturiesYear; j <= (currentYear + 100); j += period)
             System.out.println(j);
-            if (j > currentYear)
-                break;
-        }
 
     }
 }
