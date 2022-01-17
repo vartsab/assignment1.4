@@ -10,14 +10,15 @@ public class Main {
         //#1
         System.out.println("Задача №1");
 
+        int i = 1;
         String message = "";
 
-        for (int i = 1; i < 10; i++)
-            message += i + " ";
+        while (i < 10)
+            message += i++ + " ";
 
-        message += "10\n";
+        message += i + "\n";
 
-        for (int i = 10; i > 1; i--)
+        for (; i > 1; i--)
             message += i + " ";
 
         System.out.println(message + "1");
@@ -34,14 +35,13 @@ public class Main {
         System.out.println("\nЗадача №3");
         int currentYear = 2022;
         int period = 79;
-        int firstSeenWithinLastTwoCenturiesYear = 0;
+        int yearWhenCometShowed = 0;
 
-        do
-            firstSeenWithinLastTwoCenturiesYear += period;
-        while ( firstSeenWithinLastTwoCenturiesYear <= (currentYear - 200) );
-
-        for (int j = firstSeenWithinLastTwoCenturiesYear; j <= (currentYear + 100); j += period)
-            System.out.println(j);
+        do {
+            if ( yearWhenCometShowed >= (currentYear - 200) )
+                System.out.println(yearWhenCometShowed);
+            yearWhenCometShowed += period;
+        } while ( yearWhenCometShowed <= currentYear + 100);
 
     }
 }
